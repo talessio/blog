@@ -1,13 +1,21 @@
-html,
-body {
+html, body {
+  color: #5a5a73;
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+h1 {
+  text-align: center;
+  color: #396a83;
+}
+
+h2 {
+  color: #396a83;
 }
 
 a {
-  color: inherit;
+  color: #62ace6;
   text-decoration: none;
 }
 
