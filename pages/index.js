@@ -24,13 +24,10 @@ export default function Home({ products, pictures }) {
       <h1>Template per gli articoli in vendita</h1>
       <p>
         <h2>Tutti gli articoli:</h2>
-        <h3>
-          <Link href="articleTemplate"><a>articolo 1</a></Link>
-        </h3>
         {products.map((product) => (
           <>
             <h3>
-              <Link href="">
+              <Link href={`/products/${product.id}`}>
                 <a>{product.title}</a>
               </Link>
             </h3>
