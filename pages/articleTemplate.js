@@ -1,28 +1,20 @@
-import Head from "next/head";
+// import Head from "next/head";
 import Layout, { nomeSito } from "../components/layout";
-import utilStyles from '../styles/utils.module.css'
+import utilStyles from "../styles/utils.module.css";
+import Link from "next/dist/client/link";
 
 export default function articleTemplate() {
     return (
-        <Layout children>
-            <Head>
-                <title>
-                    {nomeSito}
-                </title>
-            </Head>
-            <section className={"slideshow"}>
-                qui vanno le foto
-            </section>
-            <section className={"nomeArticolo"}>
-                <h2>
-                    Nome articolo
-                </h2>
-            </section>
-            <section className={"descrizione"}>
+            <div>
+                <title>{nomeSito}</title>
+                <Link href="/">
+                    <a>Home</a>
+                </Link>
+                <main>
                 <p>
                     Ceci n'est pas un article.
                 </p>
-            </section>
-        </Layout>
+                </main>
+            </div>
     )
 }
