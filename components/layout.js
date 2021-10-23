@@ -1,6 +1,5 @@
 import Head from "next/head"
 import styles from './layout.module.css'
-import utilStyles from '../styles/utils.module.css'
 import Link from "next/link";
 
 export const nomeSito = "Nome del sito"
@@ -11,6 +10,9 @@ export default function Layout({ children, home }) {
             <Head>
                 <link rel="icon" href="/favicon.ico" />
                 <meta name="og:title" content={nomeSito} />
+                <meta property="og:type" content="/" />
+                <meta property="og:url" content="/" />
+                <meta property="og:image" content="favicon.ico" />
             </Head>
             <header>
                 {home ? (
@@ -25,6 +27,7 @@ export default function Layout({ children, home }) {
                         <Link href="/">
                             <a>Home</a>
                         </Link>
+                        <br /><br />
                     </div>
                 )}
             </header>

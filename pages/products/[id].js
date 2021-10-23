@@ -28,7 +28,6 @@ export default function productPage({ productData, picData }) {
                 <main>
                     <img src={picData.url} />
                     <h3>{picData.title}</h3>
-                    Slideshow
                     <h1>{productData.title}</h1>
                     Ceci n'est pas un article.
                     <br /><br />
