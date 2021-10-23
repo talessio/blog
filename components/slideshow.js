@@ -1,7 +1,5 @@
-export default function slideshow(){
-    return (
-        <div className="container">
-            
-        </div>
-    )
-}
+import {UncontrolledCarousel, Row, Col} from "reactstrap";
+
+const items = [
+    get
+]
