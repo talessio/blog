@@ -23,17 +23,15 @@ export async function getStaticProps(data) {
 
 export default function productPage({ productData, picData }) {
     return (
-        <div>
-            <Layout>
-                <main>
-                    <img src={picData.url} />
-                    <h3>{picData.title}</h3>
-                    <h1>{productData.title}</h1>
-                    Ceci n'est pas un article.
-                    <br /><br />
-                    {productData.body}
-                </main>
-            </Layout>
-        </div>
+        <Layout>
+            <main>
+                <img src={picData.url} />
+                <h3>{picData.title}</h3>
+                <h1>{productData.title}</h1>
+                Ceci n'est pas un article.
+                <br /><br />
+                {productData.body}
+            </main>
+        </Layout>
     )
 }
