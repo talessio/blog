@@ -1,7 +1,7 @@
 export default function slideshow(){
     return (
-        <div>
-
+        <div className="container">
+            
         </div>
     )
 }

@@ -18,24 +18,25 @@ export async function getStaticProps() {
 
 export default function Home({ products, pictures }) {
   return (
-    // <Layout>
-    <div>
-      <title>{nomeSito}</title>
-      <h1>Template per gli articoli in vendita</h1>
-      <p>
-        <h2>Tutti gli articoli:</h2>
-        {products.map((product) => (
-          <>
-            <h3>
-              <Link href={`/products/${product.id}`}>
-                <a>{product.title}</a>
-              </Link>
-            </h3>
-            {product.body}
-          </>
-        ))}
-      </p>
-    </div>
-    // </Layout>
+    <Layout home>
+      <div>
+        <Head/>
+        <main>
+          <p>
+            <h2>Tutti gli articoli:</h2>
+            {products.map((product) => (
+              <>
+                <h3>
+                  <Link href={`/products/${product.id}`}>
+                    <a>{product.title}</a>
+                  </Link>
+                </h3>
+                {product.body}
+              </>
+            ))}
+          </p>
+        </main>
+      </div>
+    </Layout>
   )
 }
