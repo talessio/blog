@@ -1,29 +1,7 @@
 import { getProduct, getAllProductIds } from "../../lib/products";
-import { getAllPictureIds, getPicture } from "../../lib/pictures";
-import Link from "next/dist/client/link";
+import { getPicture } from "../../lib/pictures";
 import Layout from "../../components/layout";
-import "~slick-carousel/slick/slick.css";
-import "~slick-carousel/slick.slick-theme.css";
-
-export default class Slider extends Component {
-    render(){
-        const settings = {
-            dots: true,
-            infinite: true,
-            speed: 500,
-            slidesToShow: 1,
-            slidersToScroll: 1
-        };
-        return(
-            <div>
-                <h2>Slidey McSlideFace</h2>
-                <Slider {...settings}>
-                    
-                </Slider>
-            </div>
-        )
-    }
-}
+import Slider from "../../components/photoSlider"
 
 export async function getStaticPaths() {
     const prodPaths = await getAllProductIds()
@@ -38,7 +16,8 @@ export async function getStaticProps(data) {
     const picData = await getPicture(data.params.id)
     return {
         props: {
-            productData, picData
+            productData
+            , picData
         }
     }
 }
@@ -47,9 +26,19 @@ export default function productPage({ productData, picData }) {
     return (
         <Layout>
             <main>
-                <img src={picData.url} />
-                <h3>{picData.title}</h3>
                 <h1>{productData.title}</h1>
+                <Slider>
+                    {
+                        urls.map(url => {
+                            return (
+                                <div key={url}>
+                                    {url}
+                                </div>
+                            )
+                        }
+                        )
+                    }
+                </Slider>
                 Ceci n'est pas un article.
                 <br /><br />
                 {productData.body}
