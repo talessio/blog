@@ -1,7 +1,29 @@
 import { getProduct, getAllProductIds } from "../../lib/products";
-import { getAllPictureIds, getPicture } from "../../lib/pictures"
+import { getAllPictureIds, getPicture } from "../../lib/pictures";
 import Link from "next/dist/client/link";
 import Layout from "../../components/layout";
+import "~slick-carousel/slick/slick.css";
+import "~slick-carousel/slick.slick-theme.css";
+
+export default class Slider extends Component {
+    render(){
+        const settings = {
+            dots: true,
+            infinite: true,
+            speed: 500,
+            slidesToShow: 1,
+            slidersToScroll: 1
+        };
+        return(
+            <div>
+                <h2>Slidey McSlideFace</h2>
+                <Slider {...settings}>
+                    
+                </Slider>
+            </div>
+        )
+    }
+}
 
 export async function getStaticPaths() {
     const prodPaths = await getAllProductIds()
