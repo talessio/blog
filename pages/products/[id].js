@@ -1,42 +1,44 @@
 import { getProduct, getAllProductIds } from "../../lib/products";
-import { getPicture } from "../../lib/pictures";
+import { getPicture, getAllPictureIds } from "../../lib/pictures";
+import { getAlbum, getAllAlbumIds } from "../../lib/albums"
 import Layout from "../../components/layout";
 import Slider from "../../components/photoSlider"
 
 export async function getStaticPaths() {
     const prodPaths = await getAllProductIds()
+    const picPaths = await getAllPictureIds()
+    const albPaths = await getAllAlbumIds()
     return {
-        paths: prodPaths,
+        paths: (prodPaths, picPaths, albPaths),
         fallback: true
     }
 }
 
 export async function getStaticProps(data) {
     const productData = await getProduct(data.params.id)
-    const picData = await getPicture(data.params.id)
+    // const picData = await getPicture(data.params.id)
+    // const albData = await getAlbum(data.params.id)
     return {
         props: {
             productData
-            , picData
+            // , picData
+            // , albData
         }
     }
 }
 
-export default function productPage({ productData, picData }) {
+export default function productPage({ productData, picData, albData }) {
     return (
         <Layout>
             <main>
                 <h1>{productData.title}</h1>
                 <Slider>
                     {
-                        urls.map(url => {
+                        getAllAlbumIds().map(url => {
                             return (
-                                <div key={url}>
-                                    {url}
-                                </div>
+                                <div key={url}>{url}</div>
                             )
-                        }
-                        )
+                        })
                     }
                 </Slider>
                 Ceci n'est pas un article.
