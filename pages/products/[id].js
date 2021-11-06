@@ -41,18 +41,19 @@ export default function productPage({ productData, picData, albData }) {
                                 <div key={elem.id}>
                                     <Image
                                         src={elem.url}
-                                        width={500}
-                                        height={500}
+                                        width={400}
+                                        height={400}
                                     />
                                 </div>
                             )
                         })
                     }
                 </Slider>
+                <br />
                 Ceci n'est pas un article.
-                <br /><br />
+                <br />
                 {productData.body}
             </main>
-        </Layout>
+        </Layout >
     )
 }
