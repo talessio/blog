@@ -4,6 +4,7 @@ import { getAlbum, getAllAlbumIds } from "../../lib/albums"
 import Layout from "../../components/layout";
 import Slider from "../../components/photoSlider"
 import Image from 'next/image'
+import StarRating from "../../components/stars";
 
 export async function getStaticPaths() {
     const prodPaths = await getAllProductIds()
@@ -49,6 +50,9 @@ export default function productPage({ productData, picData, albData }) {
                         })
                     }
                 </Slider>
+                <br />
+                <StarRating>
+                </StarRating>
                 <br />
                 Ceci n'est pas un article.
                 <br />
