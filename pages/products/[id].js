@@ -1,9 +1,9 @@
+import Image from 'next/image'
 import { getProduct, getAllProductIds } from "../../lib/products";
-import { getPicture, getAllPictureIds } from "../../lib/pictures";
+import { getAllPictureIds } from "../../lib/pictures";
 import { getAlbum, getAllAlbumIds } from "../../lib/albums"
 import Layout from "../../components/layout";
 import Slider from "../../components/photoSlider"
-import Image from 'next/image'
 import StarRating from "../../components/stars";
 
 export async function getStaticPaths() {
@@ -18,19 +18,16 @@ export async function getStaticPaths() {
 
 export async function getStaticProps(data) {
     const productData = await getProduct(data.params.id)
-    // const picData = await getPicture(data.params.id)
     const albData = await getAlbum(data.params.id)
     return {
         props: {
             productData
-            // , picData
             , albData
         }
     }
 }
 
-export default function productPage({ productData, picData, albData }) {
-    // console.log(albData)
+export default function productPage({ productData, albData }) {
     return (
         <Layout>
             <main>
