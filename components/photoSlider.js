@@ -7,10 +7,10 @@ import "slick-carousel/slick/slick-theme.css";
 export default class SimpleSlider extends Component {
     render() {
         const settings = {
-            dots: true,
+            dots: false,
             infinite: true,
             speed: 500,
-            slidesToShow: 1,
+            slidesToShow: 4,
             slidersToScroll: 1
         };
         return (

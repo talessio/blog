@@ -51,8 +51,7 @@ export default function productPage({ productData, picData, albData }) {
                     }
                 </Slider>
                 <br />
-                <StarRating>
-                </StarRating>
+                <StarRating />
                 <br />
                 Ceci n'est pas un article.
                 <br />
