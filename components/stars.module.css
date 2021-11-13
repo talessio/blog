@@ -3,7 +3,7 @@
 }
 
 .star {
-    color: yellow;
+    /* color: yellow; */
     text-align: center;
     display: inline;
 }
@@ -16,7 +16,7 @@
 }
 
 .on {
-    color: #000;
+    color: yellow;
 }
 
 .off {
