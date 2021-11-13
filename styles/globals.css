@@ -1,5 +1,5 @@
 html, body {
-  /* background-color: black; */
+  background-color: black;
   color: #3e7dc2;
   padding: 0;
   margin: 2%;
@@ -26,4 +26,20 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.on {
+  color: yellow;
+  
+}
+
+.off {
+  color: #ccc;
 }
