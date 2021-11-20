@@ -28,15 +28,6 @@ export async function getStaticProps(data) {
     }
 }
 
-function openTab(tabName) {
-    var i, x;
-    x = document.getElementsByClassName("ratingMenu");
-    for (i = 0; i < x.length; i++) {
-      x[i].style.display = "none";
-    }
-    document.getElementById(tabName).style.display = "block";
-  }
-
 export default function productPage({ productData, albData }) {
     return (
         <Layout>
@@ -59,20 +50,17 @@ export default function productPage({ productData, albData }) {
                 </Slider>
                 <br />
                 <div className={styles.rating}>
-                    <div onClick="openTab('rate')">
-                        Tell us your opinion<br />
-                    </div>
-                    <div id="rate" className="ratingMenu">
-                        <span onClick="this.parentElement.style.display='none'" className="closebtn">x</span>
-                        Rating 1: <StarRating />
-                        <br />
-                        Rating 2: <StarRating />
-                        <br />
-                        Rating 3: <StarRating />
-                    </div>
-                </div>
-                <div className={styles.rating}>
-
+                    {/* <FinalRate /> */}
+                    <br />
+                    <br />
+                    Tell us your opinion
+                    <br />
+                    <br />
+                    Rating 1: <StarRating />
+                    <br />
+                    Rating 2: <StarRating />
+                    <br />
+                    Rating 3: <StarRating />
                 </div>
                 <br />
                 Ceci n'est pas un article.

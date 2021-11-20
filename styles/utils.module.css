@@ -13,22 +13,5 @@
 
 .rating {
     text-align: center;
-    font-size: x-large;
-}
-
-.ratingMenu {
-    float: left;
-    width: 33.33%;
-    padding: 50px;
-    text-align: center;
-    font-size: 25px;
-    cursor: pointer;
-    color: white;
-}
-
-.closebtn {
-    float: right;
-    color: white;
-    font-size: 35px;
-    cursor: pointer;
+    font-size: large;
 }

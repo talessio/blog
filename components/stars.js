@@ -10,14 +10,19 @@ const StarRating = () => {
                 index += 1
                 return (
                     <button
-                        type={styles.button}
-                        key={index}
-                        className={index <= (hover || rating) ? "on" : "off"}
-                        onClick={() => setRating(index)}
-                        onMouseEnter={() => setHover(index)}
-                        onMouseLeave={() => setHover(rating)}
+                    type={styles.button}
+                    key={index}
+                    className={index <= (hover || rating) ? "on" : "off"}
+                    onClick={() => setRating(index)}
+                    onMouseEnter={() => setHover(index)}
+                    onMouseLeave={() => setHover(rating)}
                     >
-                        <span className={styles.star} id='star'>★</span>
+                        <span
+                            className={styles.star}
+                            id='star'
+                            >
+                            ★
+                        </span>
                     </button>
                 )
             })}
@@ -25,4 +30,11 @@ const StarRating = () => {
     )
 }
 
-export default StarRating;
+// const FinalRate = () => {
+//     const finalIndex = 6
+//     return (
+//         finalIndex
+//     )
+// }
+
+export default (StarRating);

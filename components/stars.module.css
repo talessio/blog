@@ -7,23 +7,5 @@
 .star {
     text-align: center;
     display: inline;
-    font-size: x-large;
-}  
-
-
-.button {
-    background-color: transparent;
-    border: none;
-    outline: none;
-    cursor: pointer;
-}
-
-.on {
-    /* color: yellow; */
-    color: #ffea00;
-}
-
-.off {
-    /* color: #ccc; */
-    color: black;
+    font-size: large;
 }
