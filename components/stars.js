@@ -1,23 +1,20 @@
 import styles from "./stars.module.css"
-import React, { useState } from "react"
+import React from "react"
 
-const StarRating = () => {
-    const [rating, setRating] = useState(0)
-    const [hover, setHover] = useState(0)
+const StarRating = ({value, onStarClick}) => {
+    const [hover, setHover] = React.useState(0)
     return (
-        // TotalRateCount(rating),
         <div className={styles.rating}>
             {[...Array(5)].map((star, index) => {
                 index += 1
-                // console.log(index)
                 return (
                     <button
                         type={styles.button}
                         key={index}
-                        className={index <= (hover || rating) ? "on" : "off"}
-                        onClick={() => setRating(index)}
+                        className={index <= (hover || value) ? "on" : "off"}
+                        onClick={() => onStarClick(index)}
                         onMouseEnter={() => setHover(index)}
-                        onMouseLeave={() => (setHover(rating), TotalRateCount(rating))}
+                        onMouseLeave={() => (setHover(value))}
                     >
                         <span
                             className={styles.star}
@@ -30,15 +27,6 @@ const StarRating = () => {
             })}
         </div >
 
-    )
-}
-
-function TotalRateCount(rating) {
-    var totalRate
-    totalRate += rating
-    console.log(totalRate)
-    return (
-        totalRate
     )
 }
 

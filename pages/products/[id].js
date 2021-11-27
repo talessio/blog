@@ -6,6 +6,7 @@ import { getAlbum, getAllAlbumIds } from "../../lib/albums"
 import Layout from "../../components/layout";
 import Slider from "../../components/photoSlider"
 import StarRating from "../../components/stars";
+import React from 'react';
 
 export async function getStaticPaths() {
     const prodPaths = await getAllProductIds()
@@ -28,7 +29,19 @@ export async function getStaticProps(data) {
     }
 }
 
+function TotalRateCount(rating) {
+    var totalRate = 0
+    totalRate += rating
+    console.log(totalRate)
+    return (
+        totalRate
+    )
+}
+
 export default function productPage({ productData, albData }) {
+    const [satisfaction, setSatisfaction] = React.useState(0)
+    const [quality, setQuality] = React.useState(0)
+    const [price, setPrice] = React.useState(0)
     return (
         <Layout>
             <main>
@@ -50,17 +63,24 @@ export default function productPage({ productData, albData }) {
                 </Slider>
                 <br />
                 <div className={styles.rating}>
-                    {/* <FinalRate /> */}
+                    //create finalAvg that computes avg for totalratecount
+                    <StarRating value={finalAvg}/>
                     <br />
                     <br />
                     Tell us your opinion
                     <br />
                     <br />
-                    Rating 1: <StarRating />
+                    Satisfaction:
+                    <br/>
+                    <StarRating value={satisfaction} onStarClick={(value) => (setSatisfaction(value), TotalRateCount(value))} />
                     <br />
-                    Rating 2: <StarRating />
+                    Quality: 
+                    <br/>
+                    <StarRating value={quality} onStarClick={(value) => (setQuality(value), TotalRateCount(value))}/>
                     <br />
-                    Rating 3: <StarRating />
+                    Price: 
+                    <br/>
+                    <StarRating value={price} onStarClick={(value) => (setPrice(value), TotalRateCount(value))} />
                 </div>
                 <br />
                 Ceci n'est pas un article.
