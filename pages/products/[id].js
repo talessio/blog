@@ -67,7 +67,6 @@ export default function productPage({ productData, albData }) {
                 </Slider>
                 <br />
                 <div className={styles.rating}>
-                    {/* create finalAvg that computes avg for totalratecount */}
                     <StarRating value={finalAvg} readOnly={true} />
                     <br />
                     <br />
@@ -86,8 +85,6 @@ export default function productPage({ productData, albData }) {
                     <br/>
                     <StarRating value={price} onStarClick={(value) => (setPrice(value), TotalRateCount(value))} />
                 </div>
-                <br />
-                Ceci n'est pas un article.
                 <br />
                 {productData.body}
             </main>

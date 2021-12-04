@@ -32,14 +32,13 @@ const StarRating = ({ value, onStarClick, readOnly }) => {
                                 className={index <= (hover || value) ? "on" : "off"}
                                 id='star'
                             >
-                                ★
+                                {index <= value ? "★" : (index - 0.5 <= value ? "⯪" : "★")}
                             </span>
                         </span>
                     )
                 }
             })}
         </div >
-
     )
 }
 
