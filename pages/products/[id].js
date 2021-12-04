@@ -33,15 +33,19 @@ function TotalRateCount(rating) {
     var totalRate = 0
     totalRate += rating
     console.log(totalRate)
-    return (
-        totalRate
-    )
+    return (totalRate)
+}
+
+function computeAvg (rating1, rating2, rating3) {
+    var finalAvg = (rating1+rating2+rating3)/3
+    return (finalAvg)
 }
 
 export default function productPage({ productData, albData }) {
     const [satisfaction, setSatisfaction] = React.useState(0)
     const [quality, setQuality] = React.useState(0)
     const [price, setPrice] = React.useState(0)
+    var finalAvg = computeAvg(satisfaction, quality, price)
     return (
         <Layout>
             <main>
@@ -63,7 +67,7 @@ export default function productPage({ productData, albData }) {
                 </Slider>
                 <br />
                 <div className={styles.rating}>
-                    //create finalAvg that computes avg for totalratecount
+                    {/* create finalAvg that computes avg for totalratecount */}
                     <StarRating value={finalAvg}/>
                     <br />
                     <br />
