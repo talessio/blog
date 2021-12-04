@@ -68,7 +68,7 @@ export default function productPage({ productData, albData }) {
                 <br />
                 <div className={styles.rating}>
                     {/* create finalAvg that computes avg for totalratecount */}
-                    <StarRating value={finalAvg}/>
+                    <StarRating value={finalAvg} readOnly={true} />
                     <br />
                     <br />
                     Tell us your opinion

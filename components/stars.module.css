@@ -4,9 +4,19 @@
     align-items: center;
 }
 
-
 .star {
     text-align: center;
     display: inline;
     font-size: large;
+}
+
+.starReadOnly {
+    align-items: flex-start;
+    text-align: center;
+    font-weight: 400;
+    /* margin: 2px; */
+    padding-top: 2px;
+    padding-right: 6px;
+    padding-bottom: 3px;
+    padding-left: 6px;
 }
