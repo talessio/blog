@@ -11,7 +11,9 @@ export default class SimpleSlider extends Component {
             infinite: true,
             speed: 500,
             slidesToShow: 4,
-            slidersToScroll: 1
+            slidersToScroll: 1,
+            autoplay: true,
+            arrows: false
         };
         return (
             <div className={styles.carousel}>
