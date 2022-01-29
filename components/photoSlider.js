@@ -17,7 +17,6 @@ export default class SimpleSlider extends Component {
         };
         return (
             <div className={styles.carousel}>
-                <h2>Slidey McSlideFace</h2>
                 <Slider {...settings}>
                     {this.props.children}
                 </Slider>
